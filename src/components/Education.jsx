@@ -7,7 +7,7 @@ export default function Education() {
         <h3>B.Sc. in Computer Science & Engineering</h3>
 
         <p>
-          <strong>University:</strong> Northern University Bangladesh
+          <strong>University:</strong> University of Information Technology and Sciences(UITS)
         </p>
 
         <p>

@@ -3,62 +3,90 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 export default function Projects() {
   const projects = [
     {
-      title: "DreamDealer",
+      title: "DreamDealer Marketplace",
       description:
-        "A modern e-commerce marketplace where users can buy and sell products.",
-      tech: "HTML • CSS • JavaScript • Php • MySQL ",
+        "A complete full-stack e-commerce marketplace where users can buy and sell products securely. Features include user authentication, admin dashboard, product management, shopping cart, order processing, and MySQL database integration.",
+      tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       github: "https://github.com/NightMare0456/DreamDealer-Website",
-      live: "http://localhost/dreamdealer/",
+      live: "#",
+      featured: true,
     },
+
+    {
+      title: "Personal Portfolio Website",
+      description:
+        "A modern responsive portfolio website built with React and Vite. Showcases my education, technical skills, projects, and contact information with smooth animations and a professional UI.",
+      tech: ["React", "Vite", "CSS", "JavaScript"],
+      github: "https://github.com/NightMare0456/asif-portfolio",
+      live: "https://asifbinsaif10.netlify.app/",
+    },
+
     {
       title: "Product Management System",
       description:
-        "A CRUD-based application to manage products with database integration.",
-      tech: "Linux",
-      github: "https://github.com/NightMare0456",
-      live: "https://github.com/NightMare0456/-Product-Management-System",
+        "A Linux terminal-based inventory and product management system developed using Shell scripting. Supports CRUD operations, stock management, searching, and report generation.",
+      tech: ["Shell", "Linux", "Bash"],
+      github:
+        "https://github.com/NightMare0456/Product-Management-System",
+      live: "#",
     },
+
     {
-      title: "Personal Portfolio",
+      title: "Chat Application",
       description:
-        "A responsive portfolio website built with React to showcase my skills and projects.",
-      tech: "React • CSS • Vite",
-      github: "https://github.com/NightMare0456",
+        "A real-time chat application developed in C++ using socket programming concepts that enables communication between multiple users over a network.",
+      tech: ["C++", "Socket Programming"],
+      github: "https://github.com/NightMare0456/Chat-Application",
       live: "#",
     },
   ];
 
   return (
-    <section id="projects" className="projects">
-      <h2>My Projects</h2>
+    <section className="projects" id="projects">
+      <h2 className="section-title">Projects</h2>
 
       <div className="project-grid">
         {projects.map((project, index) => (
-          <div className="project-card" key={index}>
-            <h3>{project.title}</h3>
+          <div
+            key={index}
+            className={`project-card ${
+              project.featured ? "featured-card" : ""
+            }`}
+          >
+            {project.featured && (
+              <span className="featured-badge">⭐ Featured</span>
+            )}
 
-            <p>{project.description}</p>
+            <div className="project-content">
+              <h3>{project.title}</h3>
 
-            <span>{project.tech}</span>
+              <p>{project.description}</p>
 
-            <div className="project-buttons">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="btn"
-              >
-                <FaGithub /> GitHub
-              </a>
+              <div className="tech-stack">
+                {project.tech.map((tech, i) => (
+                  <span key={i}>{tech}</span>
+                ))}
+              </div>
 
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-outline"
-              >
-                <FaExternalLinkAlt /> Live Demo
-              </a>
+              <div className="project-links">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaGithub /> GitHub
+                </a>
+
+                {project.live !== "#" && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaExternalLinkAlt /> Live Demo
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}

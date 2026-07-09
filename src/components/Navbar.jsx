@@ -1,7 +1,7 @@
 function Navbar() {
   return (
     <nav className="navbar">
-      <h2>Asif.</h2>
+        <h2>Asif Bin Saif</h2>
 
       <div className="nav-links">
         <a href="#about">About</a>

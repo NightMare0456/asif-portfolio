@@ -1,26 +1,73 @@
+import { FaGraduationCap, FaCode, FaBrain } from "react-icons/fa";
+
 export default function About() {
   return (
-    <section id="about" className="about">
-      <div className="about-container">
-        <h2>About Me</h2>
+    <section className="about" id="about">
 
-        <p>
-          I'm <strong>Asif Bin Saif</strong>, a 3rd-year Computer Science &
-          Engineering student with a passion for software development and
-          artificial intelligence.
-        </p>
+      <span className="eyebrow">Who I Am</span>
 
-        <p>
-          I enjoy building full-stack web applications using modern
-          technologies and continuously improving my programming skills.
-        </p>
+      <h2>About Me</h2>
 
-        <p>
-          My current focus is on Python, Java, React, Node.js, and AI &
-          Machine Learning. I'm looking for internship opportunities where I
-          can learn, contribute, and grow as a software engineer.
-        </p>
+      <div className="about-grid">
+
+        <div className="about-left">
+
+          <p>
+            I'm <strong>Asif Bin Saif</strong>, a Computer Science &
+            Engineering student passionate about software engineering,
+            artificial intelligence and modern web development.
+          </p>
+
+          <p>
+            I enjoy transforming ideas into real-world applications using
+            modern technologies. My goal is to become a skilled Full Stack
+            Software Engineer while continuously exploring AI and Machine
+            Learning.
+          </p>
+
+          <p>
+            I believe programming is more than writing code—it's solving
+            problems that make people's lives easier.
+          </p>
+
+        </div>
+
+        <div className="about-right">
+
+          <div className="about-box">
+
+            <FaGraduationCap className="about-icon"/>
+
+            <h3>Education</h3>
+
+            <p>B.Sc. Computer Science & Engineering</p>
+
+          </div>
+
+          <div className="about-box">
+
+            <FaCode className="about-icon"/>
+
+            <h3>Development</h3>
+
+            <p>Full Stack Web Development</p>
+
+          </div>
+
+          <div className="about-box">
+
+            <FaBrain className="about-icon"/>
+
+            <h3>AI</h3>
+
+            <p>Machine Learning & Python</p>
+
+          </div>
+
+        </div>
+
       </div>
+
     </section>
   );
 }
